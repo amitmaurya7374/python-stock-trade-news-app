@@ -35,7 +35,6 @@ dates = [key for (key, value) in stock_dict_list.items()]  # list of dates
 yesterday_closing_price = float(stock_dict_list[dates[0]]["4. close"])
 
 day_before_yesterday_closing_price = float(stock_dict_list[dates[1]]["4. close"])
-print(day_before_yesterday_closing_price)
 
 closing_diff = abs(yesterday_closing_price - day_before_yesterday_closing_price)
 
@@ -46,7 +45,7 @@ if diff_percent > 0:
 else:
     up_down = "🔻"
 
-diff_percent = 7  # for testing remove it after testing
+# diff_percent = 7  # for testing remove it after testing
 if diff_percent > 5:
     response = requests.get(url=NEWS_ENDPOINT, params=news_parameters)
     response.raise_for_status()
